@@ -14,19 +14,17 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <!-- // Add the new slick-theme.css if you want the default styling -->
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- header -->
 
-    <div class="max-w-7xl mx-auto px-[15px] py-[35px]">
-        <div class="lg:flex hiddens justify-between items-center  gap-4">
+    <div class="max-w-[1280px] mx-auto px-[15px] px-6 py-12 lg:py-[30px]">
+        <div class="lg:flex hidden justify-between items-center  gap-4">
             <a href="#"><img src="images/logo_dkoor_125x.png" alt=""></a>
-            <nav class="flex gap-8">
+            <nav class="flex  gap-8">
                 <div class="homedropDown relative inline-block group">
                     <li class="list-none text-lg home hover:text-[#EB7E43] "><a href="#">Home</a></li>
                     <div class="flex flex-col bg-white  homeTab  hidden z-20 t px-6 py-3 space-y-2 absolute left-1/2 mt-2 w-[110px] bg-white border rounded-md shadow-lg origin-top
@@ -44,19 +42,66 @@
                 </div>
 
                 <li class="list-none text-lg hover:text-[#EB7E43]"><a href="#">Blog</a></li>
-                <div class="shopdropdown">
-                    <li class="list-none text-lg hover:text-[#EB7E43] shop"><a href="#">Shop</a></li>
-                    <div class="grid grid-cols-4 gap-6">
-                        <div>
-                            <h2>CHAIR</h2>
-                            <hr>
-                            <a href="#">Ball Chair</a>
-                            <a href="#">Bar Stool</a>
-                            <a href="#">Balans Chair</a>
-                            <a href="#">Bubble Chair</a>
+                <div class="shopdropdown relative inline-block group">
+                    <!-- Main Menu Item -->
+                    <li class="list-none text-lg hover:text-[#EB7E43] shop">
+                        <a href="#">Shop</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <div class="flex justify-center gap-6 shopTab bg-white hidden z-20 px-6 py-4 absolute mt-2 w-[600px] 
+           border rounded-xl shadow-lg origin-top left-1/2 -translate-x-1/2
+           opacity-0 scale-y-0 pointer-events-none
+           transition-all duration-300 ease-out
+           group-hover:opacity-100 group-hover:scale-y-100 group-hover:pointer-events-auto
+           text-center">
+
+                        <!-- Col 1 -->
+
+                        <div class="flex flex-col items-center justify-center py-4">
+                            <h2 class="font-semibold">CHAIR</h2>
+                            <hr class="w-12 my-2 border-gray-300">
+                            <a href="#" class="hover:text-[#EB7E43]">Ball Chair</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Bar Stool</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Balans Chair</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Bubble Chair</a>
+                        </div>
+
+                        <!-- Col 2 -->
+
+                        <div class="flex flex-col items-center justify-center py-4">
+                            <h2 class="font-semibold">TABLE</h2>
+                            <hr class="w-12 my-2 border-gray-300">
+                            <a href="#" class="hover:text-[#EB7E43]">BedSide Table</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Coffie Table</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Gateleg Table</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Drafting Table</a>
+                        </div>
+
+                        <!-- Col 3 -->
+
+                        <div class="flex flex-col items-center justify-center py-4">
+                            <h2 class="font-semibold">SOFA</h2>
+                            <hr class="w-12 my-2 border-gray-300">
+                            <a href="#" class="hover:text-[#EB7E43]">Lawason</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Tuxedo</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Cabriole</a>
+                            <a href="#" class="hover:text-[#EB7E43]">CamelBlack</a>
+                        </div>
+
+                        <!-- Col 4 -->
+
+                        <div class="flex flex-col items-center justify-center py-4">
+                            <h2 class="font-semibold">ACCESSORIES</h2>
+                            <hr class="w-12 my-2 border-gray-300">
+                            <a href="#" class="hover:text-[#EB7E43]">Popular Items</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Best Sales</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Clean Items</a>
+                            <a href="#" class="hover:text-[#EB7E43]">Hot Items</a>
                         </div>
                     </div>
                 </div>
+
                 <li class="list-none text-lg hover:text-[#EB7E43]"><a href="#">Contact</a></li>
                 <li class="list-none text-lg hover:text-[#EB7E43]"><a href="#">About</a></li>
             </nav>
@@ -72,8 +117,8 @@
     <!-- Hero -->
 
     <section class="bg-[url(images/bg.webp)] bg-[#EFFAFA]">
-        <div class="max-w-7xl mx-auto px-[15px]">
-            <div class="grid grid-cols-1 lg:grid-cols-2 items-center py-12 lg:py-20">
+        <div class="max-w-[1280px] mx-auto px-[15px] py-12 lg:py-[35]">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center ">
                 <div>
                     <h2 class="text-[#EB7630] text-xl font-semibold">A Watch is a portable</h2>
                     <h1 class="text-[#06264B] text-6xl my-3">Smart Furniture</h1>
@@ -81,23 +126,172 @@
                         ears, very for the Heart.</p>
                     <div class="space-x-3">
                         <button
-                            class="hover:bg-[#EB7630] hover:text-[white] bg-[#06264B] text-[#EB7630] px-4 py-3 my-4 rounded-full">Explore
+                            class="hover:bg-[#EB7630] hover:text-[white] bg-[#06264B] text-[#EB7630] px-6 py-3 my-4 rounded-full">Explore
                             More<iconify-icon icon="vaadin:cart-o" width="22" height="22"
                                 class="align-middle pl-2"></iconify-icon></button>
-                        <button class="border rounded-full px-4 py-3 "><iconify-icon icon="ei:play" width="22"
+                        <button class="border rounded-full px-6 py-3 "><iconify-icon icon="ei:play" width="22"
                                 height="22" class="align-middle pr-2 "></iconify-icon>View
                             Video</button>
                     </div>
                 </div>
-                <img src="images/About-image-4.png" alt="">
+                <img src="images/About-image-4.png" alt="" class="hvr-grow-shadow">
             </div>
         </div>
     </section>
 
+    <!-- 4 Features -->
+
+    <section>
+        <div class="w-full mx-auto px-[6%] py-12 py-[35px]">
+            <div class="grid grid-cols-4 gap-6 ">
+
+                <div class="flex items-center gap-4 justify-center">
+                    <img src="images/delivery_small.png" alt="" class="w-[74px] hvr-icon-buzz-out">
+                    <div>
+                        <h2 class="text-[#333] text-xl font-semibold">Free Shipping</h2>
+                        <p class="text-sm text-[#757575]">Product are free shipping</p>
+                    </div>
+                </div>
+
+
+                <div class="flex items-center gap-4 justify-center">
+                    <img src="images/technical-support_small.png" alt="" class="w-[74px] hvr-icon-buzz-out">
+                    <div>
+                        <h2 class="text-[#333] text-xl font-semibold">Free Shipping</h2>
+                        <p class="text-sm text-[#757575]">Product are free shipping</p>
+                    </div>
+                </div>
+
+
+                <div class="flex items-center gap-4 justify-center">
+                    <img src="images/padlock_small.png" alt="" class="w-[74px] hvr-icon-buzz-out ">
+                    <div>
+                        <h2 class="text-[#333] text-xl font-semibold">Free Shipping</h2>
+                        <p class="text-sm text-[#757575]">Product are free shipping</p>
+                    </div>
+                </div>
+
+
+                <div class="flex items-center gap-4 justify-center">
+                    <img src="images/money-back-guarantee_small.png" alt="" class="w-[74px]">
+                    <div>
+                        <h2 class="text-[#333] text-xl font-semibold">Free Shipping</h2>
+                        <p class="text-sm text-[#757575]">Product are free shipping</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+
+    <section>
+        <div class="max-w-[1280px] mx-auto px-[15px] py-12 lg:py-[35]">
+
+            <!-- Head -->
+
+            <h2 class="text-md text-[#EB6F25] text-center mb-2">EXPLORE THE AWESOME</h2>
+            <h1 class="text-5xl font text-[#333] text-center">Various Products</h1>
+            <div class="flex justify-center items-center gap-20 py-8">
+                <a href="#" class="text-lg text-[#EB6F25] new product">New Products</a>
+                <a href="#" class="text-lg best-selling">Best Selling</a>
+                <a href="#" class="text-lg accessories">Accessories</a>
+            </div>
+
+            <!-- list Products -->
+
+            <div class="grid grid-cols-1 product-container p-6 lg:grid-cols-4 gap-6 py-12 lg:py-[35px]">
+
+                <!-- Adding By Javascript -->
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3-Items -->
+
+    <section>
+        <div class="max-w-[1280px] mx-auto px-[15px] py-12 lg:py-[35]">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div class=" mx-auto  p-6">
+                    <h2 class="text-2xl font-semibold">Shop Sofa</h2>
+                    <img src="images/Collection-image-8.webp" alt="MAin" class="">
+                </div>
+
+                <div class=" mx-auto  p-8">
+                    <h2 class="text-2xl font-semibold">Shop Minimal</h2>
+                    <img src="images/Collection-image-4.webp" alt="MAin" class="">
+                </div>
+
+                <div class="  mx-auto  p-8">
+                    <h2 class="text-2xl font-semibold">Shop Chair</h2>
+                    <img src="images/Collection-image-5.webp" alt="MAin" class="">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Banners -->
+
+    <section>
+        <div class="max-w-[1280px] mx-auto px-[15px] py-12 lg:py-[35]">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <img src="images/banner_01.webp" alt="banner-1" class="">
+                <img src="images/banner_02.webp" alt="banner-2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Items -->
+
+    <section>
+        <div class="max-w-[1280px] mx-auto px-[15px] py-12 lg:py-[35]">
+            <h2 class="text-lg text-[#eb6f25] text-center mb-3">AWEASOME PRODUCTS</h2>
+            <h1 class="text-4xl text-center mb-3">Featured Collections</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 py-12 lg:py-[35px] featured-collection">
+
+                <!-- Adding By Javascript -->
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[url(images/testi_bg.webp)]">
+        <div class="max-w-[1280px] mx-auto px-[15px] py-12 lg:py-[35px]">
+            <div class="flex flex-col justify-center items-center py-12 lg:py-20">
+                <h1 class="text-4xl text-[#06264B]">EXPLORE THE AWESOME</h1>
+                <p class="text-sm mt-4 mb-4 text-[#757575]">What Client Says</p>
+                <img src="images/1_00c1395f-ffaf-48a0-92e8-4fd73aed4627_100x.webp" alt="" class="w-[120px] rounded-full mb-3 mt-4">
+                <p class="text-md w-[700px] text-center mb-4 mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam placeat sequi ratione inventore architecto reiciendis hic, iste ipsa porro iure, in, neque fugit! Exercitationem aliquam dolor quos modi ducimus? Ab.</p>
+                <h2 class="mt-5 text-md text-[#333] font-bold">HESTER PERKINS</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discount -->
+
+    <section>
+        <div class="max-w-[1280px] mx-auto px-[15px] py-12 lg:py-[35px]">
+            <div class="grid grid-cols-1 lg:grid-cols-3 cc gap-4">
+
+                <!-- Addding By Javascript -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+     
     <script src="script.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+
 </body>
 
 </html>
