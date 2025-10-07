@@ -42,16 +42,16 @@ async function variousProduct() {
 
     const productDiv = document.createElement('div');
 
-    productDiv.setAttribute('class', 'product border flex flex-col justify-end rounded-md p-4 mb-4 w-[250]');
+    productDiv.setAttribute('class', 'product border flex flex-col justify-end rounded-md p-4 mb-4 w-full');
 
     productDiv.innerHTML = ` <img src="${product.thumbnail}" alt="${product.title}" class="w-full hvr-grow-shadow object-cover mt-2">
 
-        <h2 class="font-bold text-[#333] text-lg mb-2">${product.title}</h2>
+        <h2 class="font-bold text-[#333] text-md lg:text-lg mb-2">${product.title}</h2>
 
         <div class="flex gap-2 justify-start">
         <p class="text-[#333]  text-sm line-through leading-tight">(${discountedPrice}%)</p>
 
-        <p class="text-[#eb6f25] text-xl font-semibold">$${product.price}</p>
+        <p class="text-[#eb6f25] lg:text-xl font-semibold">$${product.price}</p>
         </div>`;
     newProductsContainer.appendChild(productDiv);
   });
