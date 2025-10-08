@@ -27,6 +27,43 @@ shopDropDown.addEventListener("mouseleave", () => {
   shopTab.classList.add("hidden");
 });
 
+// Hamburger
+
+const hamBurgericon = document.querySelector('.hamburgericon')
+hamBurgericon.addEventListener('click',()=>{
+    const hamBurger = document.querySelector('.hamburger')
+    hamBurger.classList.remove('hidden')
+    const close = document.querySelector('.close')
+    close.addEventListener('click',()=>{
+      hamBurger.classList.add('hidden')
+    })  
+})
+
+const searchIcon = document.querySelector('.searchicon')
+searchIcon.addEventListener('click', ()=>{
+  const search = document.querySelector('.Search')
+  search.classList.remove('hidden')
+  const closeSearch = document.querySelector('.closeSearch')
+  closeSearch.addEventListener('click',()=>{
+    search.classList.add('hidden')
+  })
+})
+
+// Cart SideBar
+
+const carts = document.querySelectorAll('.cart')
+carts.forEach(cart => {
+
+cart.addEventListener('click',()=>{
+  const cartSidebar = document.querySelector('.cartSidebar')
+  cartSidebar.classList.remove('hidden')
+  const closeSidebar = document.querySelector('.closeCart')
+  closeSidebar.addEventListener('click',()=>{
+    cartSidebar.classList.add('hidden')
+  })
+})
+})
+
 // Various Products
 
 async function variousProduct() {
