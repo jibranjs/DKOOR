@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dkoor - Home Decore & Furniture</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="module" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +22,8 @@
 
     <!-- header -->
 
-    <div class="max-w-[1280px] mx-auto px-[15px] lg:px-6 py-6 lg:py-[30px]">
-        <div class="flex  justify-between items-center  gap-4">
+    <div class="max-w-[1280px] mx-auto px-[15px] lg:px-6 py-6 lg:py-[30px] ab">
+        <div class="flex justify-between items-center  gap-4">
             <a href="#"><img src="images/logo_dkoor_125x.png" alt=""></a>
             <nav class="lg:flex hidden gap-8">
                 <div class="homedropDown relative inline-block group">
@@ -128,14 +129,18 @@
 
         <!-- Search -->
 
-        <div class="Search opacity-90 bg-[#333] hidden w-[100%] shadow-xl h-full fixed top-0 right-0 z-20  px-[15px] py-6">
+        <div class="Search opacity-100 bg-[#333] overflow-scroll hidden w-[100%] shadow-xl h-full absolute top-0 right-0 z-20  px-[15px] py-6">
             <div class="flex  justify-center">
                  <iconify-icon icon="iconoir:cancel" width="28" height="28" class="bg-[#333] hover:text-[#EB7E43] closeSearch text-white p-1"></iconify-icon>
             </div>       
-            <div class="flex justify-center mt-[200px]">
-                    <input type="search" placeholder="Search our store" class="px-4 py-3 bg-[#333] border-b-[1px] w-[600px] outline-none">
+            <div class="flex justify-center ">
+                    <input type="search" placeholder="Search our store" class="px-4 searchInput py-3 bg-[#333] border-b-[1px] w-[600px] text-white outline-none">
+            </div>
+            
+            <div class="results mt-4">
 
-            </div>    
+            </div>
+            
         
         </div>
 
@@ -153,14 +158,15 @@
 
         <!-- Hamburger -->
 
-        <div class="bg-[#fff] hidden w-[60%] hamburger h-full shadow-xl fixed top-0 right-0 z-20  px-[15px] py-6">
+        <div class="bg-[#fff] hidden w-[60%] hamburger  h-full shadow-xl fixed top-0 right-0 z-20  px-[15px] py-6">
                 <iconify-icon icon="iconoir:cancel" width="28" height="28" class="bg-[#333] hover:text-[#EB7E43] close text-white p-1"></iconify-icon>
            
             <div class="flex border items-center">
-                <input type="search" placeholder="Search our store" class="outline-none  w-full px-4 py-4 bg-white ">
+                <input type="search" placeholder="Search our store" class="outline-none mbinputs w-full px-4 py-4 bg-white ">
                 <iconify-icon icon="mynaui:search" width="28" height="28" class="text-black px-4 py-1 "></iconify-icon>
             </div>
-
+            <div class="mobResults mt-4">
+            </div>
             <hr class="my-6">
 
             <ul class="my-6">
@@ -404,7 +410,7 @@
                         <img src="images/5_600x400_crop_center.webp" alt=" Glance Future"
                             class=" absolute inset-0 bg-[url('/your-image.jpg')] bg-cover bg-center transition-transform duration-500 hover:scale-110">
                     </div>
-                    <h2 class="text-xl font-bold text-[#333]">Glance Into the Future of Androids</h2>
+                    <h2 class="text-xl font-bold text-[#333]">Nullam at tellus vehicula</h2>
                     <hr class="my-4">
                     <p class="text-sm text-[#999898] mb-3">01 Feburary,2023 \ 0 comments</p>
                     <p class="text-sm text-[#0F2E51]">The summer holidays are wonderful. Dressing for them can be
@@ -550,11 +556,7 @@
         </div>
 
     </section>
-
-
-    <!-- Scripts -->
-
-    <script src="script.js"></script>
+    
 
 
 </body>

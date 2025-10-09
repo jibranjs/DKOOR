@@ -1,3 +1,9 @@
+// Imports
+
+import initSearchComponent from './searchProducts.js';
+import initmobilesearchproduct from './mobilesearchproduct.js';
+
+
 const homeNav = document.querySelector('.home');
 const homeTab = document.querySelector('.homeTab');
 const homeDropDown = document.querySelector('.homedropDown');
@@ -20,7 +26,6 @@ homeDropDown.addEventListener("mouseleave", () => {
 //   DropDown :Shop
 
 shopNav.addEventListener('mouseenter', () => {
-
   shopTab.classList.remove('hidden');
 })
 shopDropDown.addEventListener("mouseleave", () => {
@@ -34,20 +39,15 @@ hamBurgericon.addEventListener('click',()=>{
     const hamBurger = document.querySelector('.hamburger')
     hamBurger.classList.remove('hidden')
     const close = document.querySelector('.close')
+    initmobilesearchproduct();
     close.addEventListener('click',()=>{
       hamBurger.classList.add('hidden')
     })  
 })
 
-const searchIcon = document.querySelector('.searchicon')
-searchIcon.addEventListener('click', ()=>{
-  const search = document.querySelector('.Search')
-  search.classList.remove('hidden')
-  const closeSearch = document.querySelector('.closeSearch')
-  closeSearch.addEventListener('click',()=>{
-    search.classList.add('hidden')
-  })
-})
+initSearchComponent();
+
+
 
 // Cart SideBar
 
@@ -79,13 +79,13 @@ async function variousProduct() {
 
     const productDiv = document.createElement('div');
 
-    productDiv.setAttribute('class', 'product border flex flex-col justify-end rounded-md p-4 mb-4 w-full');
+    productDiv.setAttribute('class', 'product border flex flex-col rounded-md p-4 mb-4 w-full');
 
-    productDiv.innerHTML = ` <img src="${product.thumbnail}" alt="${product.title}" class="w-full hvr-grow-shadow object-cover mt-2">
+    productDiv.innerHTML = `<div class="relative text-white rounded-lg"> <img src="${product.thumbnail}" alt="${product.title}" class="w-full hvr-grow-shadow object-cover "><p  class="absolute   top-0 right-0 bg-[#EB6F25] text-white text-xs font-bold px-3 py-1 rounded-full">${discountedPrice} %</p></div>
 
         <h2 class="font-bold text-[#333] text-md lg:text-lg mb-2">${product.title}</h2>
 
-        <div class="flex gap-2 justify-start">
+        <div class="flex gap-2 justify-start items-center">
         <p class="text-[#333]  text-sm line-through leading-tight">(${discountedPrice}%)</p>
 
         <p class="text-[#eb6f25] lg:text-xl font-semibold">$${product.price}</p>
@@ -108,14 +108,12 @@ async function featuredproduct() {
 
 randomfeaturedProducts.forEach(product => {
 
-const discountedPrice = (
-      product.price - (product.price * product.discountPercentage / 30)
-    ).toFixed(2);
+  const discountedPrice = 10
       const productDiv = document.createElement('div');
 
       productDiv.setAttribute('class', 'product border rounded-md  mb-4 w-[250]');
 
-      productDiv.innerHTML = ` <img src="${product.thumbnail}" alt="${product.title}" class="w-full bg-[#FFFBF5]  object-cover ">
+      productDiv.innerHTML = `<div class="relative text-white rounded-lg"> <img src="${product.thumbnail}" alt="${product.title}" class="w-full bg-[#FFFBF5]  object-cover "><p class="absolute   top-3 right-2 bg-[#EB6F25] text-white text-xs font-bold px-3 py-1 rounded-full">${discountedPrice} %</p></div>
 
         <h2 class="font-bold text-[#333] px-4 py-4 text-lg mb-2">${product.title}</h2>
 
@@ -147,7 +145,7 @@ const discountedPrice = (
       const discountDiv = document.createElement('div')
       discountDiv.setAttribute('class', 'w-[350px]')
       discountDiv.classList.add('flex', 'items-center')
-      discountDiv.innerHTML = `<img src="${product.thumbnail}" alt="${product.title}" class="w-[150px] bg-[#F5FFF7]  object-cover mt-2"> <div class="flex flex-col gap-3 ml-2"> <h2 class="font-semibold">${product.title}</h2> <p class="text-[#eb6f25] text-xl font-semibold">$${product.price}</p><p  class="text-[#333] line-through text-sm leading-tight ">(${discountedPrice}%)</p><div class="flex gap-2"><iconify-icon icon="streamline-ultimate:search-circle" width="28" height="28" class="hover:text-white text-[#757575] hover:bg-[#EB6F25] rounded-full outline-none" ></iconify-icon><iconify-icon icon="teenyicons:heart-circle-outline" width="28" height="28"   class="hover:text-white text-[#757575] hover:bg-[#EB6F25] rounded-full outline-none"></iconify-icon><iconify-icon icon="hugeicons:recycle-03" width="24" height="24"class="text-[#757575] cursor-pointer rounded-full outline-none"></iconify-icon></div>
+      discountDiv.innerHTML = `<img src="${product.thumbnail}" alt="${product.title}" class="w-[150px] bg-[#F5FFF7]  object-cover mt-2"> <div class="flex flex-col gap-3 ml-2"> <h2 class="font-semibold">${product.title}</h2> <p class="text-[#eb6f25] text-xl font-semibold">$${product.price}</p><p  class="text-[#333] line-through text-sm leading-tight ">(${discountedPrice}%)</p><div class="flex gap-2"><iconify-icon icon="streamline-ultimate:search-circle" width="28" height="28" class="hover:text-white text-[#757575] hover:bg-[#EB6F25] rounded-full outline-none" ></iconify-icon><iconify-icon icon="teenyicons:heart-circle-outline" width="28" height="28"   class="hover:text-white text-[#757575] hover:bg-[#EB6F25] rounded-full outline-none"></iconify-icon><iconify-icon icon="hugeicons:recycle-03" width="20" height="20"class="text-[#757575] cursor-pointer rounded-full border-2 border-[#757575] p-[2px]  outline-none"></iconify-icon></div>
         </div>`
 
       bestSelling.appendChild(discountDiv)
@@ -182,21 +180,7 @@ async function topRated() {
 
     });
   };
-  topRated()
-
-  // Featured Blogs 
-
-
-  async function featuredBlogs() {
-    const response = await fetch(`${url}?limit=3`)
-  const data = await response.json()
-  const blogs = document.querySelector('.blogs')
-  blogs.forEach(blog =>{
-    const blogs = document.querySelector('.blogs')
-    bo
-  })
+  topRated();
   
-
-  };
 featuredBlogs()
   .catch(err => console.error('Error fetching products:', err));
